@@ -93,31 +93,3 @@ class APIException(Exception):
             raise APIException("Неверно введён запрос или\nнет в списке валют")
         if not isinstance(val[2], float):
             raise APIException(f"Для пересчета нужно указать количество")
-
-
-# VALUTA = {
-#     'Юань': 'CNY',
-#     'Евро': 'EUR',
-#     'Фунт': 'GBP',  # Британский
-#     'Тенге': 'KZT',
-#     'Рубль': 'RUB',
-#     'Лира': 'TRY',  # Турецкая
-#     'Доллар': 'USD'
-# }
-
-# config1 = configparser.ConfigParser()
-# config1.read('currency.ini', encoding='UTF-8')
-#
-# VALUTA = dict(config1['currency'])
-# print(VALUTA, '\n', type(VALUTA))
-#
-# s = 'Рубль Юань 20'
-# try:
-#     pr = StringProcessing(s, VALUTA)
-#     print(pr.getvalues())
-#     APIException.checking_keys(pr.getvalues(), VALUTA)
-# except APIException as e:
-#     print(e)
-# else:
-#     base, quote, amount = pr.getvalues()
-#     print(APIRequest.get_price(base, quote, amount))
